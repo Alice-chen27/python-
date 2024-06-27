@@ -1,2 +1,3 @@
 # bg_test
-测试文档
+ccf_bg
+使用pyecharts进行绘图操作

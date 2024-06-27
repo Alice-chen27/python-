@@ -89,4 +89,4 @@ map_chart = (
 )
 # 渲染地图图表，生成HTML文件
 # Render the map chart and generate an HTML file
-map_chart.render("Map of China.html")
+map_chart.render("bg_test/html of China/Map of China.html")

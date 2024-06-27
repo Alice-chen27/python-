@@ -47,4 +47,4 @@ line_chart = (
 
 # 渲染图表到HTML文件
 # Render the chart to an HTML file.
-line_chart.render("Line_of_China.html")
+line_chart.render("bg_test/html of China/Line_of_China.html")

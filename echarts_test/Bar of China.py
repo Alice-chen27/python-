@@ -36,4 +36,4 @@ for sheet_name in excel_file.sheet_names:
     timeline.add(bar, sheet_name)
 
 # 渲染最终的时间线图表到HTML文件 (Render the final timeline chart to an HTML file)
-timeline.render("Bar of China.html")
+timeline.render("bg_test/html of China/Bar of China.html")
