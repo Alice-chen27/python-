@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>基于Echarts的数据可视化分析</title> 
+    </head>
+
+    <body>
+        <div id="echart" style="width: 600px; height: 400px;"></div>
+        <script src="../js/echarts.js"></script>
+        <script src="../js/chengdu.js"></script>
+        <script>
+            let weatherCount = weatherData.reduce((acc,cur) => {
+                if (cur.weather in acc){
+                    acc[cur.weather] +=1;
+                }
+                else {
+                    acc[cur.weather] = 1
+                }
+                return acc;
+            },{});
+
+            let myChart = echarts.init(document.getElementById('echart'));
+            let data = [];
+            for (let weather in weatherCount){
+                data.push({value: weatherCount[weather],name: weather});
+            }
+            let option = {
+                title: {
+                    Text:'天气类型统计',
+                    subtext:'成都',
+                    left:'center'
+                },
+                tooltip:{
+                    trigger:'item',
+                    formatter:'{a} <br/>{b} : {c} ({d}%)'
+                },
+                legend:{
+                    orient: 'vertical',
+                    left: 'left',
+                    data: Object.keys(weatherCount)
+                },
+                series:[
+                    {
+                        name:"天气类型",
+                        type:"pie",
+                        radius:"55%",
+                        center:["50%","60%"],
+                        data:data,
+                        emphasis:{
+                            itemStyle:{
+                                shadowBlur:10,
+                                shadowOffsetX:0,
+                                shadowColor:"rgba(0,0,0,0.5)"
+                            }
+                        }
+                    }
+                ]
+            };
+            myChart.setOption(option);
+        </script>
+    </body>
+</html>
