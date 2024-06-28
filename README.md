@@ -1,3 +1,3 @@
-# bg_test
-ccf_bg
-使用pyecharts进行绘图操作
+#python数据处理与可视化
+使用python语言进行数据的处理与数据可视化
+所有文件均是学习测试
